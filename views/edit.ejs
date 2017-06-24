@@ -1,0 +1,23 @@
+<% include partials/header.ejs%>
+
+<h1>To Do List</h1>
+
+<div class="ui grid">
+  <div class= "row">
+    <div class="sixteen wide column">
+      <form action= "/list/<%= todo._id%>?_method=PUT" method= "POST">
+        <div class="ui input">
+            <input type="text" placeholder="I would like to..." name= "todo[text]" value="<%= todo.text %>">
+            <button class="ui button" type= "submit">Edit</button>
+        </div>
+      </form>
+      <a id= "back "href= "/list">Back</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<% include partials/footer.ejs%>

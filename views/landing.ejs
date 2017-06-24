@@ -1,0 +1,63 @@
+<% include partials/header.ejs%>
+
+
+<h1>To Do List</h1>
+
+
+<div class="ui grid">
+  <div class= "row">
+    <div class="four wide column">
+      <form action= "/list/new" method= "GET">
+        <button class="ui primary basic button" type= "submit">Add</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th class= "ten wide">To Do</th>
+      <th class= "two wide">Details</th>
+      <th class= "two wide">Edit</th>
+      <th class= "two wide">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+<% for (var i=0; i<=todo.length-1;i++) { %>
+
+
+      <td><%=todo[i].text%></td>
+      
+      <td>
+        <form action= "/list/<%= todo[i]._id %>" method= "GET">
+          <button class="ui green basic button" type= "submit">Details</button>
+        </form>
+      </td>
+      
+      <td>
+        <form action= "/list/<%= todo[i]._id %>/edit" method= "GET">
+          <button class="ui blue basic button" type= "submit">Edit</button>
+        </form>
+      </td>
+        
+      <td>
+        <form action= "/list/<%= todo[i]._id %>?_method=DELETE" method= "POST">
+          <button class="ui red basic button">Delete</button>
+        </form>
+      </td>
+      
+    </tr>
+
+<% } %>
+
+  </tbody>
+</table>
+
+<% include partials/footer.ejs%>
+
+  
+
