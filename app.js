@@ -149,7 +149,7 @@ app.post('/list', function(req, res) {
          
          else {
              
-        res.redirect("/list"); 
+             res.redirect("/list"); 
         
          }
      });
@@ -159,7 +159,7 @@ app.post('/list', function(req, res) {
 
 app.listen(8080, function() {
     
-    console.log("Your web server is up and running!");
+    console.log("Welcome to the To Do List!");
 });
 
 
